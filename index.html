@@ -1,9 +1,62 @@
 <html>
+	<link rel="stylesheet" href="styles/styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+	<script async src="./javascript/index.js"></script>
 	<head>
 	<script src = "https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 	<script type = "text/javascript" src = "index.js"></script>
+	<script>
+	
+	
+	function beginTimer() {
+		document.getElementById("status").innerHTML = "Active";
+		var timeleft = 150;
+		var downloadTimer = setInterval(function(){
+  			document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
+  			timeleft -= 1;
+  			if(timeleft <= 0){
+    			clearInterval(downloadTimer);
+    			document.getElementById("timer").innerHTML = "Finished"
+  			}
+		}, 1000);
+	}
+	
+	function scorePoint() {
+		document.getElementById("savetime").innerHTML = "Check at " + document.getElementById("timer").innerHTML + "\n" + document.getElementById("savetime").innerHTML
+	}
+	
+	
+	/*function startTime() {
+		var time = 0;
+		time = checkTime(time)
+		document.getElementById("timer").innerHTML = time;
+		var t = setTimeout(startTime, 500);
+	}
+	
+	function checktime(time) {
+		if(document.getElementById("status").innerHTML == "Active"){
+		time = time + 1};
+		return time;
+	}*/
+	
+	</script>
 	</head>
-	<body>
-		<p>HI</p>>
-	</body>
+	<div class="top">
+	<title> Scouting System </title>
+		<h1>6502 scouting system</h1>
+	</div>
+	<div class="main">
+	<div class="right">
+		<body onload="startTime()">
+			<p id=status> </p>
+			<p id=timer> </p>
+			<button onclick="scorePoint()"> Score Point </button>
+			<button onclick="beginTimer()"> Start Scouting </button>
+			<pre id=savetime> </pre>
+		</body>
+	</div>
+	<div class="clear"></div>
+	</div>
+	
+	
 </html>
