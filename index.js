@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var config = {
 		apiKey: "AIzaSyDs-eaEU022QCGXE2Owc1mWfnRdeAtj4dI",
 		authDomain: "scouting-system-b009f.firebaseapp.com",
@@ -55,3 +56,6 @@ userRef.set({
 });
 
 console.log(firebase.database().ref('teams'));
+=======
+document.getElementById('date').innerHTML = new Date().toDateString();
+>>>>>>> origin/frontend
