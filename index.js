@@ -8,7 +8,42 @@ var config = {
 		};
 firebase.initializeApp(config);
 
-var usersRef = firebase.database().ref("users/");
+
+      if (firebase.auth().currentUser) {
+        // [START signout]
+        firebase.auth().signOut();
+        // [END signout]
+      } else {
+        // [START authanon]
+        firebase.auth().signInAnonymously().catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // [START_EXCLUDE]
+          if (errorCode === 'auth/operation-not-allowed') {
+            alert('You must enable Anonymous auth in the Firebase Console.');
+          } else {
+            console.error(error);
+          }
+          // [END_EXCLUDE]
+        });
+        // [END authanon]
+      }
+      //document.getElementById('quickstart-sign-in').disabled = true;
+    
+
+// //var firebase = require('firebase');
+// //var firebaseui = require('firebaseui');
+
+// ui.start('#firebaseui-auth-container', {
+//   signInOptions: [
+//     // List of OAuth providers supported.
+//     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+//   ],
+//   // Other config options...
+// });
+
+var userRef = firebase.database().ref('teams');
 
 userRef.set({
 	Tigey: {
@@ -19,4 +54,4 @@ userRef.set({
 	}
 });
 
-console.log(firebase.database().ref('users'));
+console.log(firebase.database().ref('teams'));
