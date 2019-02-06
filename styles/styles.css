@@ -1,0 +1,95 @@
+body {
+  text-align: center;
+  background-color: #000000;
+  color: #ff5d73;
+  font-family: Righteous, sans-serif;
+}
+
+button {
+  background-color: #111111; 
+  border: #ff5d73;
+  color: gray;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: Righteous, sans-serif;
+  font-size: 16px;
+}
+
+.top {
+    position:absolute;
+    left:0; right:0;
+    height: 92px;
+}
+.left {
+    position:absolute;
+    left:0; top:92px; bottom: 0;
+    width: 178px;
+}
+.main {
+    position: absolute;
+    left:178px; top:92px; right:0; bottom:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
